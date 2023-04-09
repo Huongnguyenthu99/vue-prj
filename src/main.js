@@ -3,6 +3,8 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import { createStore } from 'vuex'
 import App from './App.vue'
 
+import { createPinia } from 'pinia'
+
 import './assets/main.css';
 // import routes
 import index from './components/project/caclulator/index.vue'
@@ -15,7 +17,7 @@ import Antd from 'ant-design-vue';
 
 const routes = [
     { path: '/', component: index },
-  ]
+]
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -23,30 +25,33 @@ const router = createRouter({
 })
 
 const store = createStore({
-  state () {
-    return {
-      count: 0,
-      todos: [
-        { id: 1, text: '...', done: true },
-        { id: 2, text: '...', done: false }
-      ]
+    state() {
+        return {
+            count: 0,
+            todos: [
+                { id: 1, text: '...', done: true },
+                { id: 2, text: '...', done: false }
+            ]
+        }
+    },
+    mutations: {
+        increment(state) {
+            state.count++
+        }
+    },
+    getters: {
+        doneTodos(state) {
+            return state.todos.filter(todo => todo.done);
+        }
     }
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  },
-  getters: {
-    doneTodos (state) {
-      return state.todos.filter(todo => todo.done);
-    }
-  }
 })
 
 const app = createApp(App);
 app.use(router);
 app.use(Antd);
 app.use(store);
-app.mount('#app');
 
+const pinia = createPinia();
+app.use(pinia);
+
+app.mount('#app');

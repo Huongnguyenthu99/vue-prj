@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue';
+    import { counter } from './data'
 
     const listAct = ref([
         { value:0, label: "AC", isActive: false},
@@ -28,8 +29,11 @@
     const actionNum = (item) => {
         console.log("actionNum", item);
     }
+
+    const count = counter;
 </script>
 <template>
+    <div>Count from store {{ count }}</div>
     <div id="app1">
         <h2>Caculator</h2>
         <div class="show-calculation">

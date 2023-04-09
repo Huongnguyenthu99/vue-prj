@@ -1,6 +1,4 @@
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import TheWelcome from "./components/TheWelcome.vue";
 import parent from "./components/LifecycleHook/parent.vue";
 import danhsach from "./components/Router/todolist/danhsach.vue";
 import "ant-design-vue/dist/antd.css";
