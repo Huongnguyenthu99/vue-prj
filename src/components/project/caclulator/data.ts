@@ -1,4 +1,5 @@
-import { useCounterStoreWithOut } from "../../../store"
+import { useCounterStoreWithOut } from "../../../store/module/store";
+
 
 const useStore = useCounterStoreWithOut();
 
