@@ -42,10 +42,11 @@ import { ref, watch } from "vue";
 import { counter } from "./data";
 import { Select } from "ant-design-vue";
 import { useLocaleStoreWithOut } from "../../../store/module/locale";
-import { changeLocale } from "../../../locale/setupI18n";
+import { changeLocale } from "/@/locale/setupI18n";
 const store = useLocaleStoreWithOut();
 const currentLanguage = ref(store.locale); //store.currentLanguage;
 watch (currentLanguage, (value) => {
+  console.log("changeLocale", changeLocale);
     changeLocale(value);
   }
 );

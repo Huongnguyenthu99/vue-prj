@@ -8,6 +8,7 @@ import { createPinia } from 'pinia'
 import './assets/main.css';
 // import routes
 import index from './components/project/caclulator/index.vue'
+import danhsach from './components/Router/todolist/danhsach.vue'
 
 // UI component
 import Antd from 'ant-design-vue';
@@ -15,7 +16,7 @@ import Antd from 'ant-design-vue';
 import { setI18n } from './locale/setupI18n';
 
 const routes = [
-    { path: '/', component: index },
+    { path: '/', component: danhsach },
 ]
 
 const router = createRouter({
