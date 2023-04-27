@@ -57,6 +57,8 @@ const data = [
     { title: 'Training Vue P3', status: 0, description: "Training Vue P3" }
 ]
 
+const account = ref([]);
+
 onMounted(() => {
     console.log('Application mounted');
 });
@@ -82,7 +84,7 @@ const formTask = reactive({
 <template>
     <div>
         <div class="d-flex justify-content-between">
-            <div>Danh sách task</div>
+            <div><a href="/basic-api/account/getAll" target="hello1">Danh sách task</a></div>
             <Button type="primary" @click="openModal">Thêm mới</Button>
         </div>
         <Table :columns="columns" :data-source="data" bordered>

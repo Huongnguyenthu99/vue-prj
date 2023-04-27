@@ -15,7 +15,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
       viteMockServe({
         // default
         mockPath: 'mock',
-        localEnabled: command === 'serve',
+        localEnabled: true,
       }),
     ],
     resolve: {
