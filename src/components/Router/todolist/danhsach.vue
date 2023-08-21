@@ -26,8 +26,8 @@ import { reactive } from 'vue';
 </script> -->
 
 <script lang="ts" setup>
-import { Modal, Button, Form, FormItem, Input, Select, SelectOption, Textarea, Table, Layout, LayoutSider, Menu, MenuItem, LayoutHeader, LayoutContent } from 'ant-design-vue'
 import { onMounted, ref, reactive } from 'vue';
+import { Modal,  Button, Form, FormItem, Input, Select, SelectOption, Textarea, Table, Layout, LayoutSider, Menu, MenuItem, LayoutHeader, LayoutContent } from 'ant-design-vue'
 const visible = ref(false);
 const statusOptions = ref([
     { value:0, label: 'To do'},
@@ -95,7 +95,6 @@ const formTask = reactive({
             </template>
         </Table>
     </div>
-    <!-- modal add -->
     <Modal v-model:visible="visible" title="Thông tin task" @ok="handleOk" >
         <Form :model="formTask" name="basic" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }" autocomplete="off" @finish="onFinish" @finishFailed="onFinishFailed">
             <FormItem label="Tiêu đề" name="title" :rules="[{required: true, message: 'Vui lòng nhập tiêu đề'}]">
